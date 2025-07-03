@@ -4,7 +4,7 @@ export interface Ingredient {
 }
 
 export interface RecipeSteps {
-    desciption: string;
+    description: string;
 }
 
 export interface Recipe {
