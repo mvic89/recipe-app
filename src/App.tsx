@@ -25,15 +25,15 @@ const StyledRecipe = styled.div`
     align-items: center;
     flex-grow: 1;
     padding: 2rem 0;
-    
+
     background-color: ${primary.tint};
 `
 
 const StyledRecipeContent = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 2rem;
+   
+    gap: 1rem;
     padding: 2rem;
 
 
@@ -44,6 +44,26 @@ const StyledRecipeContent = styled.div`
     img {
         width: 100%;
     }
+
+    ul {
+        padding-left: 1rem;
+    }
+
+    ol {
+        padding-left: 1rem;
+    }
+
+    
+
+    ul li {
+        margin-bottom: 0.25rem;
+    }
+
+    ol li {
+        margin-bottom: 0.75rem;
+    }
+
+
 `
 
 
