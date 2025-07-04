@@ -1,5 +1,4 @@
 import { useState } from "react";
-import RecipeList from "./components/RecipeList";
 import RecipeBtn from "./components/RecipeBtn";
 import { Recipes } from "./data/recipesdata";
 import type { Recipe } from "./utils/recipetypes";
