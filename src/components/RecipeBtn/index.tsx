@@ -8,7 +8,7 @@ interface RecipeBtnProps {
 
 const StyledBtn = styled.a`
     background-color: ${primary.base};
-    color: white;
+    color: ${grey.shade};
     border: none;
     padding: 12px 20px;
     margin: 20px;
@@ -18,13 +18,14 @@ const StyledBtn = styled.a`
 
     &:hover {
         background-color: ${primary.shade};
+        color: ${grey.tint}
     }
 
 `
 
 const RecipeBtn = ({onClick}: RecipeBtnProps) => {
     return (
-        <StyledBtn onClick={onClick}>Show Random Recipes</StyledBtn>
+        <StyledBtn onClick={onClick}>Click here!</StyledBtn>
     )
 }
 

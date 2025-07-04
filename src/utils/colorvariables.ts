@@ -6,7 +6,7 @@ interface Colors {
 
 export const primary: Colors = {
     base: '#ffead0',
-    tint: '#fff0de',
+    tint: '#fff9f1',
     shade: '#b3a492'
 }
 

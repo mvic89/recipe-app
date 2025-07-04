@@ -8,7 +8,7 @@ const StyledFooter = styled.footer`
 `
 
 const StyledFooterTitle = styled.h1`
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: ${grey.shade};
     text-align: center;
     margin: 24px;
@@ -17,7 +17,7 @@ const StyledFooterTitle = styled.h1`
 const Footer = () => {
     return (
         <StyledFooter>
-            <StyledFooterTitle>Footer</StyledFooterTitle>
+            <StyledFooterTitle>&copy; Vic: 2025</StyledFooterTitle>
         </StyledFooter>
     )
 }
