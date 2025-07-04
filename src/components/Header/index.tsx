@@ -2,12 +2,17 @@
 import styled from "styled-components"
 import pastaLogo from '../../assets/pasta-logo.png'
 import { primary} from "../../utils/colorvariables"
+import { screens } from "../../utils/breakpoints"
 
 const StyledHeader = styled.header`
     padding: 24px;
     background-color: ${primary.base};
     display: flex;
     justify-content: center;
+
+    @media screen and ${screens.mobile} {
+        padding: 12px;
+    }
 `
 
 const LogoLink = styled.a`

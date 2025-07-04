@@ -7,6 +7,7 @@ import { Recipes } from "./data/recipesdata";
 import type { Recipe } from "./utils/recipetypes";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { screens } from "./utils/breakpoints";
 
 
 
@@ -27,6 +28,12 @@ const StyledRecipe = styled.div`
     padding: 2rem 0;
 
     background-color: ${primary.tint};
+
+    @media screen and ${screens.mobile} {
+        h1 {
+            font-size: 1.5rem;
+        }
+    }
 `
 
 const StyledRecipeContent = styled.div`
@@ -37,7 +44,9 @@ const StyledRecipeContent = styled.div`
     padding: 2rem;
 
 
-    border: 1px solid #333;
+    
+    background-color: ${primary.base};
+    border-radius: 10px;
 
     max-width: 500px;
 
@@ -63,6 +72,14 @@ const StyledRecipeContent = styled.div`
         margin-bottom: 0.75rem;
     }
 
+
+    @media screen and ${screens.mobile} {
+        width: 80%;
+
+        h2 {
+            font-size: 1.25rem;
+        }
+    }
 
 `
 
