@@ -25,9 +25,6 @@ const App = () => {
                 <p>{randomRecipe.summary}</p>
             </div>
         )}
-
-        <h2>All Recipes</h2>
-        <RecipeList recipes={Recipes}/>
     </div>
   )
 }
