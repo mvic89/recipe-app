@@ -9,21 +9,23 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 
-const StyledDiv = styled.div`
-    height: 100vh;
-`
+
 
 const StyledMainDiv = styled.div`
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+
 `
 
-const StyledRecipe = styled.div`
-    height: 100%;
+const StyledRecipe = styled.div` 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-
+    flex-grow: 1;
+    padding: 2rem 0;
+    
     background-color: ${primary.tint};
 `
 
@@ -32,6 +34,16 @@ const StyledRecipeContent = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 2rem;
+    padding: 2rem;
+
+
+    border: 1px solid #333;
+
+    max-width: 500px;
+
+    img {
+        width: 100%;
+    }
 `
 
 
@@ -45,23 +57,35 @@ const App = () => {
 
 
   return (
-    <StyledDiv>
-        <StyledMainDiv>
-            <Header/>
-            <StyledRecipe>
-            <h1>Recipe App</h1>
+    <StyledMainDiv>
+        <Header/>
+        <StyledRecipe>
+            <h1>Random Italian Pasta Recipes</h1>
             <RecipeBtn onClick={getRandomRecipe}/>
             {randomRecipe && (
                 <StyledRecipeContent>
                     <h2>{randomRecipe.title}</h2>
                     <img src={randomRecipe.image} alt={randomRecipe.title} width="300" />
                     <p>{randomRecipe.summary}</p>
+                    <h4>Ingredients</h4>
+                    <ul>
+                      {randomRecipe.ingredients.map((ingredient, index) => (
+                        <li key={index}>
+                          {ingredient.quantity} – {ingredient.name}
+                        </li>
+                      ))}
+                    </ul>
+                    <h4>Steps</h4>
+                    <ol>
+                      {randomRecipe.steps.map((step, index) => (
+                        <li key={index}>{step.description}</li>
+                      ))}
+                    </ol>
                 </StyledRecipeContent>
             )}
-            </StyledRecipe>
-            <Footer/>
-        </StyledMainDiv>
-    </StyledDiv>
+        </StyledRecipe>
+        <Footer/>
+    </StyledMainDiv>
   )
 }
 
