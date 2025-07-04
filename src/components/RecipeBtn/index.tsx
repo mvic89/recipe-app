@@ -1,12 +1,13 @@
 'use client'
 import styled from "styled-components";
+import { primary, grey } from "../../utils/colorvariables";
 
 interface RecipeBtnProps {
     onClick: () => void;
 }
 
 const StyledBtn = styled.a`
-    background-color: #ff5e57;
+    background-color: ${primary.base};
     color: white;
     border: none;
     padding: 12px 20px;
@@ -14,6 +15,11 @@ const StyledBtn = styled.a`
     border-radius: 6px;
     font-size: 1rem;
     cursor: pointer;
+
+    &:hover {
+        background-color: ${primary.shade};
+    }
+
 `
 
 const RecipeBtn = ({onClick}: RecipeBtnProps) => {

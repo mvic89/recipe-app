@@ -1,5 +1,6 @@
 'use client'
 import styled from "styled-components";
+import { primary, grey } from "./utils/colorvariables";
 import { useState } from "react";
 import RecipeBtn from "./components/RecipeBtn";
 import { Recipes } from "./data/recipesdata";
@@ -22,6 +23,8 @@ const StyledRecipe = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    background-color: ${primary.tint};
 `
 
 const StyledRecipeContent = styled.div`

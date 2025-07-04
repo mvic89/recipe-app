@@ -1,14 +1,15 @@
 'use client'
 import styled from "styled-components"
+import { primary, grey } from "../../utils/colorvariables"
 
 const StyledFooter = styled.footer`
     padding: 24px;
-    background-color:rgb(240, 206, 132);
+    background-color: ${primary.base};
 `
 
 const StyledFooterTitle = styled.h1`
-    font-size: 3rem;
-    color: white;
+    font-size: 1.5rem;
+    color: ${grey.shade};
     text-align: center;
     margin: 24px;
 `

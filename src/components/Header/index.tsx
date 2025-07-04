@@ -1,22 +1,29 @@
 'use client'
 import styled from "styled-components"
+import pastaLogo from '../../assets/pasta-logo.png'
+import { primary} from "../../utils/colorvariables"
 
 const StyledHeader = styled.header`
     padding: 24px;
-    background-color:rgb(240, 206, 132);
+    background-color: ${primary.base};
+    display: flex;
+    justify-content: center;
 `
 
-const StyledPageTitle = styled.h1`
-    font-size: 3rem;
-    color: white;
-    text-align: center;
-    margin: 24px;
+const LogoLink = styled.a`
+  display: inline-block;
+`;
+
+const Logo = styled.img`
+    width: 100px;
 `
 
 const Header = () => {
     return (
         <StyledHeader>
-            <StyledPageTitle>Italian Recipes</StyledPageTitle>
+            <LogoLink href="/">
+                <Logo src={pastaLogo} alt='Pasta logotype'/>
+            </LogoLink>
         </StyledHeader>
     )
 }
