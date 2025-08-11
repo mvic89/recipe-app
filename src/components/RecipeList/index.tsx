@@ -6,6 +6,7 @@ import RecipeBtn from "../RecipeBtn";
 import { Recipes } from "../../data/recipesdata";
 import type { Recipe } from "../../utils/recipetypes";
 import { screens } from "../../utils/breakpoints";
+import SaveBtn from "../SaveBtn";
 
 const StyledRecipe = styled.div` 
     display: flex;
@@ -73,11 +74,12 @@ const StyledRecipeContent = styled.div`
 type RecipeProps = {
   headline: string,
   firstSubtitle: string,
-  secondSubtitle: string
+  secondSubtitle: string,
+  onRecipeSaved: (recipe: Recipe) => void;
 }
 
 
-const RecipeList = ({headline, firstSubtitle, secondSubtitle}:RecipeProps) => {
+const RecipeList = ({headline, firstSubtitle, secondSubtitle, onRecipeSaved}:RecipeProps) => {
   const [randomRecipe, setRandomRecipe] = useState<Recipe | null>(null);
   const getRandomRecipe = () => {
       const index = Math.floor(Math.random() * Recipes.length);
@@ -91,23 +93,24 @@ const RecipeList = ({headline, firstSubtitle, secondSubtitle}:RecipeProps) => {
       <RecipeBtn onClick={getRandomRecipe}/>
       {randomRecipe && (
         <StyledRecipeContent>
-            <h2>{randomRecipe.title}</h2>
-            <img src={randomRecipe.image} alt={randomRecipe.title} width="300" />
-            <p>{randomRecipe.summary}</p>
-            <h4>{firstSubtitle}</h4>
-            <ul>
-              {randomRecipe.ingredients.map((ingredient, index) => (
-                <li key={index}>
-                  {ingredient.quantity} – {ingredient.name}
-                </li>
-              ))}
-            </ul>
-            <h4>{secondSubtitle}</h4>
-            <ol>
-              {randomRecipe.steps.map((step, index) => (
-                <li key={index}>{step.description}</li>
-              ))}
-            </ol>
+          <h2>{randomRecipe.title}</h2>
+          <img src={randomRecipe.image} alt={randomRecipe.title} width="300" />
+          <p>{randomRecipe.summary}</p>
+          <h4>{firstSubtitle}</h4>
+          <ul>
+            {randomRecipe.ingredients.map((ingredient, index) => (
+              <li key={index}>
+                {ingredient.quantity} – {ingredient.name}
+              </li>
+            ))}
+          </ul>
+          <h4>{secondSubtitle}</h4>
+          <ol>
+            {randomRecipe.steps.map((step, index) => (
+              <li key={index}>{step.description}</li>
+            ))}
+          </ol>
+          <SaveBtn recipe={randomRecipe} onRecipeSaved={onRecipeSaved} />
         </StyledRecipeContent>
       )}
     </StyledRecipe>
